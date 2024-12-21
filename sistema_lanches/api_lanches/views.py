@@ -5,7 +5,7 @@ from .models import Cliente, Produto, Pedido
 from .serializers import ClienteSerializer, ProdutoSerializer, PedidoSerializer
 
 def home(request):
-    return render(request, 'cliente/index.html')
+    return render(request, 'home/index.html')
 
 #Cliente
 @api_view(['GET', 'POST'])

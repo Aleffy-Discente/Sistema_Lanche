@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #fff;
+        }
+
+        .welcome-container {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .welcome-container h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .welcome-container p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .welcome-container button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #6e8efb;
+            background: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .welcome-container button:hover {
+            background: #6e8efb;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h1>Welcome!</h1>
+        <p>Meu projeto de lanche topado</p>
+        <button onclick="alert('Nada aqui! Utilize a url em riba')">Clique para começar!</button>
+    </div>
+</body>
+</html>
