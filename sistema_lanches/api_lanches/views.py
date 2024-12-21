@@ -7,7 +7,7 @@ from .serializers import ClienteSerializer, ProdutoSerializer, PedidoSerializer
 def home(request):
     return render(request, 'cliente/index.html')
 
-# Endpoints para Cliente
+#Cliente
 @api_view(['GET', 'POST'])
 def lista_clientes(request):
     if request.method == 'GET':
@@ -37,7 +37,7 @@ def cliente_detalhado(request, id):
         cliente.delete()
         return Response({'message': 'Cliente deletado com sucesso'}, status=204)
 
-# Endpoints para Produto
+#Produto
 @api_view(['GET', 'POST'])
 def lista_produtos(request):
     if request.method == 'GET':
@@ -67,7 +67,7 @@ def produto_detalhado(request, id):
         produto.delete()
         return Response({'message': 'Produto deletado com sucesso'}, status=204)
 
-# Endpoints para Pedido
+#Pedido
 @api_view(['GET', 'POST'])
 def lista_pedidos(request):
     if request.method == 'GET':
