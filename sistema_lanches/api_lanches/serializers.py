@@ -12,16 +12,16 @@ class ProdutoSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class PedidoSerializer(serializers.ModelSerializer):
-    cliente_id = serializers.PrimaryKeyRelatedField(queryset=Cliente.objects.all(), source='cliente')
-    produtos_ids = serializers.PrimaryKeyRelatedField(queryset=Produto.objects.all(), many=True, source='produtos')
+    cliente = serializers.PrimaryKeyRelatedField(queryset=Cliente.objects.all())
+    produtos = serializers.PrimaryKeyRelatedField(queryset=Produto.objects.all(), many=True)
 
     class Meta:
         model = Pedido
         fields = '__all__'
 
     def create(self, validated_data):
-        produtos = validated_data.pop('produtos')  # Usa o `source='produtos'` do campo `produtos_ids`
+        produtos = validated_data.pop('produtos')
         pedido = Pedido.objects.create(**validated_data)
-        pedido.produtos.set(produtos)  # Define os produtos ManyToMany
+        pedido.produtos.set(produtos)
         pedido.save()
         return pedido
