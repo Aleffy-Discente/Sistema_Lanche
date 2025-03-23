@@ -12,7 +12,7 @@ def home(request):
 def lista_clientes(request):
     if request.method == 'GET':
         clientes = Cliente.objects.all()
-        serializer = ClienteSerializer(clientes, many=True)
+        serializer = ClienteSerializer(clientes, many=True) 
         return Response(serializer.data)
 
     elif request.method == 'POST':
